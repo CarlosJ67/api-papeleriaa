@@ -167,36 +167,35 @@
 
       
 <div data-role="page" id="page3">
-    <div data-role="header">
-        <div data-role="navbar">
-            <ul>
-            <li><a href="#page1" data-icon="home">Inicio</a></li>
-            <li><a href="#page2" data-icon="tag">Productos</a></li>
-            <li><a href="#page3" data-icon="search" class="ui-btn-active">Busqueda</a></li>
-            </ul>
-            </div><!-- /navbar -->
-    </div>
-  
-    <div role="main" class="ui-content">
-      <form>
-        <label for="search">Buscar producto:</label>
-        <input type="text" id="search" placeholder="Nombre del producto">
-      </form>
-  
-      <ul data-role="listview" id="product-list" data-filter="true" data-input="#search">
-        <% products.forEach((product) => { %>
-          <li>
+  <div data-role="header">
+    <h1>Busqueda</h1>
+    <a href="#page1" data-icon="home" class="ui-btn-left">Inicio</a>
+    <a href="#page2" data-icon="tag" class="ui-btn-right">Productos</a>
+  </div>
+  <div role="main" class="ui-content">
+    <form>
+      <label for="search">Buscar producto:</label>
+      <input type="text" id="search" placeholder="Nombre del producto">
+    </form>
+    <ul data-role="listview" id="product-list" data-filter="true" data-input="#search">
+      <% products.forEach((product) => { %>
+        <li data-icon="info">
+          <a href="#">
             <h2><%= product.description %></h2>
             <p>Código de barras: <%= product.barcode %></p>
             <p>Marca: <%= product.brand %></p>
             <p>Precio de compra: <%= product.price %></p>
             <p>Existencias: <%= product.stock %></p>
-          </li>
-        <% }); %>
-      </ul>
-    </div>
-  
+          </a>
+        </li>
+      <% }); %>
+    </ul>
   </div>
+  <div data-role="footer" data-position="fixed">
+    <h4>Developed by Carlos Jesus</h4>
+  </div>
+</div>
+
 
 
 
